@@ -1,4 +1,5 @@
-# RAG Tool - A Haystack, Mistral, and ChainLit-based Question Answering Tool
+# RAG Tool
+##  A Haystack, Mistral, and ChainLit-based Question Answering Tool
 
 ![Project Status](https://img.shields.io/badge/status-active-brightgreen.svg)
 ## Goal:

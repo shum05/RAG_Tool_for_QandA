@@ -10,6 +10,9 @@ from haystack.utils import print_answers
 import pandas as pd
 import logging  # Import the logging module
 
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)  # Set the logging level to DEBUG
+
 load_dotenv()
 
 # Load the dataset from the CSV file
