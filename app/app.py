@@ -3,11 +3,12 @@ import os
 from dotenv import load_dotenv
 from datasets import load_dataset
 from haystack.document_stores import InMemoryDocumentStore
-from haystack.schema import Document  # Update the import
+from haystack.schema import Document
 from haystack.nodes import PromptNode, PromptTemplate, AnswerParser, BM25Retriever
 from haystack.pipelines import Pipeline
 from haystack.utils import print_answers
 import pandas as pd
+import logging  # Import the logging module
 
 load_dotenv()
 
@@ -58,6 +59,9 @@ prompt_node = PromptNode(
 # Create the decorator to handle incoming messages
 @cl.on_message
 async def main(message: str):
+    # Log the value of message for debugging
+    logging.debug(f"Value of message: {message}")
+    
     response = await cl.make_async(pipeline.run)(message)
 
     sentences = response['answers'][0].answer.split('\n')
